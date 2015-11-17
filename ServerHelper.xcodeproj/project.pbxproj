@@ -16,6 +16,9 @@
 		16E6FDFC1BFB30A3008487A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E6FDFB1BFB30A3008487A5 /* Main.storyboard */; };
 		16E6FDFE1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E6FDFD1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard */; };
 		16FCB7591BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCB7581BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift */; };
+		16FCB75E1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16FCB75C1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodeld */; };
+		16FCB7691BFB66ED003C9891 /* _TestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCB7681BFB66ED003C9891 /* _TestValue.swift */; };
+		16FCB76B1BFB66F6003C9891 /* TestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCB76A1BFB66F6003C9891 /* TestValue.swift */; };
 		56D5E68FF823A0AE8D3E7E72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EA1F681DC36821B64EA25D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		16E6FDFB1BFB30A3008487A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		16E6FDFD1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SHServerHelperStoryboard.storyboard; sourceTree = "<group>"; };
 		16FCB7581BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSelectServerHelperDialogVC.swift; sourceTree = "<group>"; };
+		16FCB75D1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ServerHelperExampleCoreData.xcdatamodel; sourceTree = "<group>"; };
+		16FCB7681BFB66ED003C9891 /* _TestValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestValue.swift; path = CoreData/Machine/_TestValue.swift; sourceTree = "<group>"; };
+		16FCB76A1BFB66F6003C9891 /* TestValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestValue.swift; path = CoreData/Human/TestValue.swift; sourceTree = "<group>"; };
 		80EA1F681DC36821B64EA25D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FA448B085CBD3BCF5BD07F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C13F1A5ED061A63948BC8623 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 				16E6FDEC1BF5E13E008487A5 /* Info.plist */,
 				16E6FDF41BF5E35D008487A5 /* ServerHelper-Bridging-Header.h */,
 				16E6FDFB1BFB30A3008487A5 /* Main.storyboard */,
+				16FCB7631BFB6301003C9891 /* CoreData */,
 			);
 			path = ServerHelper;
 			sourceTree = "<group>";
@@ -107,6 +114,16 @@
 				16FCB7581BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		16FCB7631BFB6301003C9891 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				16FCB7681BFB66ED003C9891 /* _TestValue.swift */,
+				16FCB76A1BFB66F6003C9891 /* TestValue.swift */,
+				16FCB75C1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		D5D122C2504AADCCD25D1FA7 /* Frameworks */ = {
@@ -236,9 +253,12 @@
 			files = (
 				16E6FDE31BF5E13E008487A5 /* ViewController.swift in Sources */,
 				16E6FDFA1BFB2B00008487A5 /* SHShakedWindow.swift in Sources */,
+				16FCB75E1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodeld in Sources */,
+				16FCB7691BFB66ED003C9891 /* _TestValue.swift in Sources */,
 				16E6FDF31BF5E15A008487A5 /* SHRestKitHelper.swift in Sources */,
 				16FCB7591BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift in Sources */,
 				16E6FDE11BF5E13E008487A5 /* AppDelegate.swift in Sources */,
+				16FCB76B1BFB66F6003C9891 /* TestValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +412,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		16FCB75C1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				16FCB75D1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodel */,
+			);
+			currentVersion = 16FCB75D1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodel */;
+			path = ServerHelperExampleCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 16E6FDD51BF5E13E008487A5 /* Project object */;
 }

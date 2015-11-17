@@ -17,6 +17,7 @@ class SHSelectServerHelperDialogVC: UIViewController {
     }
     
     @IBAction func changeServerTouchUp(sender: AnyObject) {
+        self.view.endEditing(true)
         SHRestKitHelper.sharedInstance.changeBaseUrl(serverURLTextField.text!)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.application(UIApplication.sharedApplication(), didFinishLaunchingWithOptions: nil)

@@ -15,7 +15,6 @@ class SHRestKitHelper {
     var managedObjectStore: RKManagedObjectStore!
     
     init() {
-        checkForNeedingStartInit()
         managedObjectStore = RKManagedObjectStore(managedObjectModel: NSManagedObjectModel.mergedModelFromBundles(nil))
         
         var error: NSError?
@@ -24,12 +23,25 @@ class SHRestKitHelper {
             abort()
         }
         
-        if (baseURL() != nil) {
+        if (SHRestKitHelper.baseURL() != nil) {
             createPersistentStore(managedObjectStore, pathToPersistentStore: self.persistentStorePath())
             managedObjectStore.createManagedObjectContexts()
             initManager()
         }
     }
+    
+    class func checkForNeedingStartInit() -> Bool {
+        
+        if SHRestKitHelper.baseURL() == nil {
+            if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                appDelegate.customWindow?.setupServerHelper()
+                return true
+            }
+        }
+        return false
+    }
+    
+    //MARK: - Persistent store
     
     func createPersistentStore(managedObjectStore : RKManagedObjectStore, pathToPersistentStore : String) {
         var persistentStore: NSPersistentStore!
@@ -72,6 +84,11 @@ class SHRestKitHelper {
     func recreateManagedObjectStore(pathToPersistentStore : String) -> Bool {
         
         do {
+            
+            RKObjectManager.sharedManager().operationQueue.cancelAllOperations()
+            NSURLCache.sharedURLCache().removeAllCachedResponses()
+            RKObjectRequestOperation.responseMappingQueue().cancelAllOperations()
+            
             try managedObjectStore.resetPersistentStores()
         } catch _ {
             print("Cant resetting")
@@ -110,40 +127,29 @@ class SHRestKitHelper {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    func baseURL() -> String?
+    class func baseURL() -> String?
     {
         return NSUserDefaults.standardUserDefaults().objectForKey("RESTKIT_BASE_URL") as? String
     }
     
     func changeBaseUrl(baseUrl : String) {
         
-        if let currentBaseURL = baseURL() {
+        if let currentBaseURL = SHRestKitHelper.baseURL() {
             if (baseUrl != currentBaseURL) {
                 recreateManagedObjectStore(persistentStorePath())
-                initManager()
             }
         } else {
-                createPersistentStore(managedObjectStore, pathToPersistentStore: persistentStorePath())
+            createPersistentStore(managedObjectStore, pathToPersistentStore: persistentStorePath())
         }
         
-            saveBaseUrl(baseUrl)
-            initManager()
-    }
-    
-    func checkForNeedingStartInit() {
-        
-        if baseURL() == nil {
-            if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-                appDelegate.customWindow?.setupServerHelper()
-            }
-        }
-        
+        saveBaseUrl(baseUrl)
+        initManager()
     }
     
     //MARK: - RKObjectManager
     
     private func initManager() {
-        if let baseURL = baseURL() {
+        if let baseURL = SHRestKitHelper.baseURL() {
             let manager = RKObjectManager(baseURL: NSURL(string: baseURL))
             manager.managedObjectStore = managedObjectStore
         }

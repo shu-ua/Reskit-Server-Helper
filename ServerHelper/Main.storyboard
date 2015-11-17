@@ -24,15 +24,36 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqE-CZ-4OA">
+                                <rect key="frame" x="265" y="540" width="71" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Add Entity"/>
+                                <connections>
+                                    <action selector="addEntityTouchUp:" destination="08s-oS-oTh" eventType="touchUpInside" id="CEi-Tx-hlZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edm-Uv-Hyi">
+                                <rect key="frame" x="279" y="99" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cYP-n4-7zy" firstAttribute="centerY" secondItem="mTz-z4-mOL" secondAttribute="centerY" id="MHc-bM-9Kr"/>
+                            <constraint firstItem="cYP-n4-7zy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="edm-Uv-Hyi" secondAttribute="bottom" constant="10" id="Sho-W7-Zta"/>
+                            <constraint firstItem="wqE-CZ-4OA" firstAttribute="centerX" secondItem="mTz-z4-mOL" secondAttribute="centerX" id="TKI-c7-trU"/>
                             <constraint firstItem="cYP-n4-7zy" firstAttribute="centerX" secondItem="mTz-z4-mOL" secondAttribute="centerX" id="aGW-kC-TA2"/>
+                            <constraint firstItem="edm-Uv-Hyi" firstAttribute="centerX" secondItem="mTz-z4-mOL" secondAttribute="centerX" id="mef-XH-JVF"/>
+                            <constraint firstItem="0oP-xM-y1c" firstAttribute="top" secondItem="wqE-CZ-4OA" secondAttribute="bottom" constant="30" id="nzJ-YQ-Zba"/>
+                            <constraint firstItem="edm-Uv-Hyi" firstAttribute="top" secondItem="mhV-Gv-yCV" secondAttribute="bottom" constant="79" id="xX4-Bq-sKF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="entityInfoLabel" destination="edm-Uv-Hyi" id="PNn-aF-aPQ"/>
                         <outlet property="textLabel" destination="cYP-n4-7zy" id="Wem-Ov-mU9"/>
                     </connections>
                 </viewController>

@@ -24,10 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        SHRestKitHelper.sharedInstance
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.window?.rootViewController =  storyboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        if (!SHRestKitHelper.checkForNeedingStartInit()) {
+            SHRestKitHelper.sharedInstance
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            self.window?.rootViewController =  storyboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        }
         
         return true
     }
