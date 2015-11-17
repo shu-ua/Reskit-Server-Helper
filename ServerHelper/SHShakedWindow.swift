@@ -28,9 +28,11 @@ class SHShakedWindow: UIWindow {
         let helperVC = serverDialogVC()
         
         if let vc = self.rootViewController {
-            helperVC.modalPresentationStyle = UIModalPresentationStyle.FullScreen
             helperVC.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-            vc.showViewController(helperVC, sender: vc)
+            helperVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext            
+            vc.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+
+            vc.presentViewController(helperVC, animated: true, completion: nil)
         }
     }
     

@@ -11,6 +11,7 @@ import UIKit
 class SHSelectServerHelperDialogVC: UIViewController {
 
     @IBOutlet weak var serverURLTextField: UITextField!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

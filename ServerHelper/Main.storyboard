@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift-og.png" translatesAutoresizingMaskIntoConstraints="NO" id="PWn-Sy-Euc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adsdsadsads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYP-n4-7zy">
                                 <rect key="frame" x="249" y="290" width="102" height="21"/>
                                 <animations/>
@@ -41,14 +45,18 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.83743355080274617" green="1" blue="0.84570725215307085" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="0oP-xM-y1c" firstAttribute="top" secondItem="PWn-Sy-Euc" secondAttribute="bottom" id="5PU-Co-VOa"/>
+                            <constraint firstItem="PWn-Sy-Euc" firstAttribute="top" secondItem="mTz-z4-mOL" secondAttribute="top" id="7Yq-eA-fVg"/>
                             <constraint firstItem="cYP-n4-7zy" firstAttribute="centerY" secondItem="mTz-z4-mOL" secondAttribute="centerY" id="MHc-bM-9Kr"/>
                             <constraint firstItem="cYP-n4-7zy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="edm-Uv-Hyi" secondAttribute="bottom" constant="10" id="Sho-W7-Zta"/>
                             <constraint firstItem="wqE-CZ-4OA" firstAttribute="centerX" secondItem="mTz-z4-mOL" secondAttribute="centerX" id="TKI-c7-trU"/>
+                            <constraint firstItem="PWn-Sy-Euc" firstAttribute="leading" secondItem="mTz-z4-mOL" secondAttribute="leading" id="Zq8-J7-IoW"/>
                             <constraint firstItem="cYP-n4-7zy" firstAttribute="centerX" secondItem="mTz-z4-mOL" secondAttribute="centerX" id="aGW-kC-TA2"/>
                             <constraint firstItem="edm-Uv-Hyi" firstAttribute="centerX" secondItem="mTz-z4-mOL" secondAttribute="centerX" id="mef-XH-JVF"/>
                             <constraint firstItem="0oP-xM-y1c" firstAttribute="top" secondItem="wqE-CZ-4OA" secondAttribute="bottom" constant="30" id="nzJ-YQ-Zba"/>
+                            <constraint firstAttribute="trailing" secondItem="PWn-Sy-Euc" secondAttribute="trailing" id="qbp-OU-ddl"/>
                             <constraint firstItem="edm-Uv-Hyi" firstAttribute="top" secondItem="mhV-Gv-yCV" secondAttribute="bottom" constant="79" id="xX4-Bq-sKF"/>
                         </constraints>
                     </view>
@@ -62,4 +70,7 @@
             <point key="canvasLocation" x="540" y="306"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="swift-og.png" width="1200" height="1200"/>
+    </resources>
 </document>

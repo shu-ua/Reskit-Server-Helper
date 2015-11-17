@@ -17,14 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zg-r6-TH2">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aA4-I1-ymf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aN0-2c-fSk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <animations/>
+                                </view>
+                                <animations/>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://google.com" borderStyle="roundedRect" placeholder="Server URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zg-r6-TH2">
                                 <rect key="frame" x="20" y="20" width="476" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="GK0-yg-pnZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="URL" returnKeyType="go"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqX-Di-toQ">
                                 <rect key="frame" x="504" y="20" width="76" height="30"/>
@@ -40,13 +50,17 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.56311354712041883" green="0.28302078357756105" blue="0.090684320320899112" alpha="0.62148160460992907" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aA4-I1-ymf" secondAttribute="trailing" id="BZo-xZ-ip4"/>
+                            <constraint firstItem="aA4-I1-ymf" firstAttribute="leading" secondItem="uce-7S-STp" secondAttribute="leading" id="K8S-rE-n69"/>
                             <constraint firstItem="8zg-r6-TH2" firstAttribute="top" secondItem="ekc-Uh-oQO" secondAttribute="bottom" id="XYS-ss-Yye"/>
                             <constraint firstItem="MqX-Di-toQ" firstAttribute="leading" secondItem="8zg-r6-TH2" secondAttribute="trailing" constant="8" id="a59-6O-PdV"/>
                             <constraint firstItem="8zg-r6-TH2" firstAttribute="leading" secondItem="uce-7S-STp" secondAttribute="leading" constant="20" id="deQ-TW-Ia5"/>
+                            <constraint firstItem="aA4-I1-ymf" firstAttribute="top" secondItem="uce-7S-STp" secondAttribute="top" id="euV-ru-7mJ"/>
                             <constraint firstItem="MqX-Di-toQ" firstAttribute="leading" secondItem="8zg-r6-TH2" secondAttribute="trailing" constant="8" id="g3j-6V-UUh"/>
                             <constraint firstAttribute="trailing" secondItem="MqX-Di-toQ" secondAttribute="trailing" constant="20" id="gjO-rF-U6A"/>
+                            <constraint firstItem="l5p-oZ-H1M" firstAttribute="top" secondItem="aA4-I1-ymf" secondAttribute="bottom" id="hNy-lA-39b"/>
                             <constraint firstItem="MqX-Di-toQ" firstAttribute="top" secondItem="ekc-Uh-oQO" secondAttribute="bottom" id="nkJ-IA-rA3"/>
                         </constraints>
                     </view>

@@ -19,6 +19,7 @@
 		16FCB75E1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16FCB75C1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodeld */; };
 		16FCB7691BFB66ED003C9891 /* _TestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCB7681BFB66ED003C9891 /* _TestValue.swift */; };
 		16FCB76B1BFB66F6003C9891 /* TestValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCB76A1BFB66F6003C9891 /* TestValue.swift */; };
+		16FCB76D1BFB787C003C9891 /* swift-og.png in Resources */ = {isa = PBXBuildFile; fileRef = 16FCB76C1BFB787C003C9891 /* swift-og.png */; };
 		56D5E68FF823A0AE8D3E7E72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EA1F681DC36821B64EA25D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		16FCB75D1BFB60DC003C9891 /* ServerHelperExampleCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ServerHelperExampleCoreData.xcdatamodel; sourceTree = "<group>"; };
 		16FCB7681BFB66ED003C9891 /* _TestValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = _TestValue.swift; path = CoreData/Machine/_TestValue.swift; sourceTree = "<group>"; };
 		16FCB76A1BFB66F6003C9891 /* TestValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestValue.swift; path = CoreData/Human/TestValue.swift; sourceTree = "<group>"; };
+		16FCB76C1BFB787C003C9891 /* swift-og.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swift-og.png"; sourceTree = "<group>"; };
 		80EA1F681DC36821B64EA25D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FA448B085CBD3BCF5BD07F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C13F1A5ED061A63948BC8623 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				16E6FDE01BF5E13E008487A5 /* AppDelegate.swift */,
 				16E6FDE21BF5E13E008487A5 /* ViewController.swift */,
 				16E6FDE71BF5E13E008487A5 /* Assets.xcassets */,
+				16FCB76C1BFB787C003C9891 /* swift-og.png */,
 				16E6FDE91BF5E13E008487A5 /* LaunchScreen.storyboard */,
 				16E6FDEC1BF5E13E008487A5 /* Info.plist */,
 				16E6FDF41BF5E35D008487A5 /* ServerHelper-Bridging-Header.h */,
@@ -207,6 +210,7 @@
 				16E6FDEB1BF5E13E008487A5 /* LaunchScreen.storyboard in Resources */,
 				16E6FDFE1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard in Resources */,
 				16E6FDE81BF5E13E008487A5 /* Assets.xcassets in Resources */,
+				16FCB76D1BFB787C003C9891 /* swift-og.png in Resources */,
 				16E6FDFC1BFB30A3008487A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
