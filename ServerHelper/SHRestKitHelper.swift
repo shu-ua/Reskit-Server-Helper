@@ -8,13 +8,14 @@
 
 import UIKit
 
-class RestKitHelper {
+class SHRestKitHelper {
     
-    static let sharedInstance = RestKitHelper()
+    static let sharedInstance = SHRestKitHelper()
     var manager : RKObjectManager!
     var managedObjectStore: RKManagedObjectStore!
     
     init() {
+        checkForNeedingStartInit()
         managedObjectStore = RKManagedObjectStore(managedObjectModel: NSManagedObjectModel.mergedModelFromBundles(nil))
         
         var error: NSError?
@@ -23,13 +24,14 @@ class RestKitHelper {
             abort()
         }
         
-        createPersistentStore(managedObjectStore, pathToPersistentStore: self.persistentStorePath())
-        
-        
-        managedObjectStore.createManagedObjectContexts()
+        if (baseURL() != nil) {
+            createPersistentStore(managedObjectStore, pathToPersistentStore: self.persistentStorePath())
+            managedObjectStore.createManagedObjectContexts()
+            initManager()
+        }
     }
     
-    func createPersistentStore(managedObjectStore : RKManagedObjectStore, pathToPersistentStore : String){
+    func createPersistentStore(managedObjectStore : RKManagedObjectStore, pathToPersistentStore : String) {
         var persistentStore: NSPersistentStore!
         
         var error: NSError?
@@ -63,18 +65,31 @@ class RestKitHelper {
                 //                abort();
             }
         }
+        
+        initManager()
     }
     
     func recreateManagedObjectStore(pathToPersistentStore : String) -> Bool {
+        
         do {
-            try NSFileManager.defaultManager().removeItemAtPath(pathToPersistentStore)
+            try managedObjectStore.resetPersistentStores()
         } catch _ {
-            print("Cant remove path")
+            print("Cant resetting")
             return false
-            //abort()
         }
         
-        createPersistentStore(managedObjectStore, pathToPersistentStore: pathToPersistentStore)
+//        dispatch_async(dispatch_get_main_queue(),{
+//            do {
+//                try NSFileManager.defaultManager().removeItemAtPath(pathToPersistentStore)
+//            } catch _ {
+//                print("Cant remove path")
+//                return false
+//                //abort()
+//            }
+////        })
+//        
+//        createPersistentStore(managedObjectStore, pathToPersistentStore: pathToPersistentStore)
+        
         return true
     }
     
@@ -88,8 +103,10 @@ class RestKitHelper {
         return RKApplicationDataDirectory().stringByAppendingString("/\(projectName).sqlite")
     }
     
-    func saveBaseUrl(baseUrl : String) {
-        NSUserDefaults.standardUserDefaults().setObject(NSNumber(bool: true), forKey: "RESTKIT_BASE_URL")
+    //MARK: - BaseURL
+    
+    private func saveBaseUrl(baseUrl : String) {
+        NSUserDefaults.standardUserDefaults().setObject(baseUrl, forKey: "RESTKIT_BASE_URL")
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
@@ -99,14 +116,40 @@ class RestKitHelper {
     }
     
     func changeBaseUrl(baseUrl : String) {
-        saveBaseUrl(baseUrl)
+        
+        if let currentBaseURL = baseURL() {
+            if (baseUrl != currentBaseURL) {
+                recreateManagedObjectStore(persistentStorePath())
+                initManager()
+            }
+        } else {
+                createPersistentStore(managedObjectStore, pathToPersistentStore: persistentStorePath())
+        }
+        
+            saveBaseUrl(baseUrl)
+            initManager()
+    }
+    
+    func checkForNeedingStartInit() {
+        
+        if baseURL() == nil {
+            if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+                appDelegate.customWindow?.setupServerHelper()
+            }
+        }
         
     }
     
-//    func initManager() {
-//        let manager = RKObjectManager(baseURL: NSURL(string: baseUrl))
-//        manager.managedObjectStore = managedObjectStore
-//    }
+    //MARK: - RKObjectManager
+    
+    private func initManager() {
+        if let baseURL = baseURL() {
+            let manager = RKObjectManager(baseURL: NSURL(string: baseURL))
+            manager.managedObjectStore = managedObjectStore
+        }
+    }
+    
+    //MARK: - Context
     
     class func saveContext() {
         let error = NSErrorPointer()

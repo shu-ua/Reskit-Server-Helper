@@ -11,11 +11,24 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var customWindow: SHShakedWindow?
+    
+    var window: UIWindow? {
+        get {
+            customWindow = customWindow ?? SHShakedWindow(frame: UIScreen.mainScreen().bounds)
+            return customWindow
+        }
+        set { }
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        SHRestKitHelper.sharedInstance
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.window?.rootViewController =  storyboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        
         return true
     }
 

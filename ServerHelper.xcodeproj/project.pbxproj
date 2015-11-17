@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		16E6FDE11BF5E13E008487A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6FDE01BF5E13E008487A5 /* AppDelegate.swift */; };
 		16E6FDE31BF5E13E008487A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6FDE21BF5E13E008487A5 /* ViewController.swift */; };
-		16E6FDE61BF5E13E008487A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E6FDE41BF5E13E008487A5 /* Main.storyboard */; };
 		16E6FDE81BF5E13E008487A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16E6FDE71BF5E13E008487A5 /* Assets.xcassets */; };
 		16E6FDEB1BF5E13E008487A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E6FDE91BF5E13E008487A5 /* LaunchScreen.storyboard */; };
-		16E6FDF31BF5E15A008487A5 /* RestKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6FDF21BF5E15A008487A5 /* RestKitHelper.swift */; };
+		16E6FDF31BF5E15A008487A5 /* SHRestKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6FDF21BF5E15A008487A5 /* SHRestKitHelper.swift */; };
+		16E6FDFA1BFB2B00008487A5 /* SHShakedWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E6FDF91BFB2B00008487A5 /* SHShakedWindow.swift */; };
+		16E6FDFC1BFB30A3008487A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E6FDFB1BFB30A3008487A5 /* Main.storyboard */; };
+		16E6FDFE1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E6FDFD1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard */; };
+		16FCB7591BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FCB7581BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift */; };
 		56D5E68FF823A0AE8D3E7E72 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80EA1F681DC36821B64EA25D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +23,15 @@
 		16E6FDDD1BF5E13E008487A5 /* ServerHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServerHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16E6FDE01BF5E13E008487A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16E6FDE21BF5E13E008487A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		16E6FDE51BF5E13E008487A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		16E6FDE71BF5E13E008487A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		16E6FDEA1BF5E13E008487A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16E6FDEC1BF5E13E008487A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16E6FDF21BF5E15A008487A5 /* RestKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestKitHelper.swift; sourceTree = "<group>"; };
+		16E6FDF21BF5E15A008487A5 /* SHRestKitHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRestKitHelper.swift; sourceTree = "<group>"; };
 		16E6FDF41BF5E35D008487A5 /* ServerHelper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ServerHelper-Bridging-Header.h"; sourceTree = "<group>"; };
+		16E6FDF91BFB2B00008487A5 /* SHShakedWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHShakedWindow.swift; sourceTree = "<group>"; };
+		16E6FDFB1BFB30A3008487A5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		16E6FDFD1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SHServerHelperStoryboard.storyboard; sourceTree = "<group>"; };
+		16FCB7581BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSelectServerHelperDialogVC.swift; sourceTree = "<group>"; };
 		80EA1F681DC36821B64EA25D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1FA448B085CBD3BCF5BD07F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C13F1A5ED061A63948BC8623 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,16 +70,43 @@
 		16E6FDDF1BF5E13E008487A5 /* ServerHelper */ = {
 			isa = PBXGroup;
 			children = (
+				16E6FDFF1BFB329D008487A5 /* SHServerHelper */,
 				16E6FDE01BF5E13E008487A5 /* AppDelegate.swift */,
 				16E6FDE21BF5E13E008487A5 /* ViewController.swift */,
-				16E6FDE41BF5E13E008487A5 /* Main.storyboard */,
 				16E6FDE71BF5E13E008487A5 /* Assets.xcassets */,
 				16E6FDE91BF5E13E008487A5 /* LaunchScreen.storyboard */,
 				16E6FDEC1BF5E13E008487A5 /* Info.plist */,
-				16E6FDF21BF5E15A008487A5 /* RestKitHelper.swift */,
 				16E6FDF41BF5E35D008487A5 /* ServerHelper-Bridging-Header.h */,
+				16E6FDFB1BFB30A3008487A5 /* Main.storyboard */,
 			);
 			path = ServerHelper;
+			sourceTree = "<group>";
+		};
+		16E6FDF81BFB2AE5008487A5 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				16E6FDF91BFB2B00008487A5 /* SHShakedWindow.swift */,
+			);
+			name = Reusable;
+			sourceTree = "<group>";
+		};
+		16E6FDFF1BFB329D008487A5 /* SHServerHelper */ = {
+			isa = PBXGroup;
+			children = (
+				16FCB7571BFB3569003C9891 /* ViewControllers */,
+				16E6FDF81BFB2AE5008487A5 /* Reusable */,
+				16E6FDF21BF5E15A008487A5 /* SHRestKitHelper.swift */,
+				16E6FDFD1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard */,
+			);
+			name = SHServerHelper;
+			sourceTree = "<group>";
+		};
+		16FCB7571BFB3569003C9891 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				16FCB7581BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D5D122C2504AADCCD25D1FA7 /* Frameworks */ = {
@@ -121,6 +154,7 @@
 		16E6FDD51BF5E13E008487A5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SH;
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Bohdan Shcherbyna";
@@ -154,8 +188,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E6FDEB1BF5E13E008487A5 /* LaunchScreen.storyboard in Resources */,
+				16E6FDFE1BFB3296008487A5 /* SHServerHelperStoryboard.storyboard in Resources */,
 				16E6FDE81BF5E13E008487A5 /* Assets.xcassets in Resources */,
-				16E6FDE61BF5E13E008487A5 /* Main.storyboard in Resources */,
+				16E6FDFC1BFB30A3008487A5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +235,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16E6FDE31BF5E13E008487A5 /* ViewController.swift in Sources */,
-				16E6FDF31BF5E15A008487A5 /* RestKitHelper.swift in Sources */,
+				16E6FDFA1BFB2B00008487A5 /* SHShakedWindow.swift in Sources */,
+				16E6FDF31BF5E15A008487A5 /* SHRestKitHelper.swift in Sources */,
+				16FCB7591BFB3586003C9891 /* SHSelectServerHelperDialogVC.swift in Sources */,
 				16E6FDE11BF5E13E008487A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,14 +245,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		16E6FDE41BF5E13E008487A5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				16E6FDE51BF5E13E008487A5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		16E6FDE91BF5E13E008487A5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -322,6 +351,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ServerHelper/ServerHelper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -336,6 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ekreative.ServerHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ServerHelper/ServerHelper-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
